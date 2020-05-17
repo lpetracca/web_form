@@ -1,2 +1,19 @@
 /* Add your styles here */
+body {
+    font-family: 'Times New Roman', Times, serif;
 
+}
+.navbar {
+    display: inline-block;
+    text-align: center;
+}
+
+.navbar, .progress-bar, .btn {
+    background-color: lightblue;
+    color: black;
+}
+
+.btn {
+    border-radius: 50px;
+    border-color: darkblue;
+}
