@@ -118,8 +118,8 @@
               <div class="input-group-prepend">
                 <label class="input-group-text" for="childGroupSelectUnder18">Options</label>
               </div>
-              <select class="custom-select form-control" id="childGroupSelectUnder18" name="childGroupSelectUnder18" required>
-                <option class="zeroChildren children" selected value="0">None</option>
+              <select onchange='toggler()' class="custom-select form-control" id="childGroupSelectUnder18" name="childGroupSelectUnder18" required>
+                <option class="zeroChildren children"  value="0">None</option>
                 <option class="oneChild children" value="1">One</option>
                 <option class="twoChildren children" value="2">Two</option>
                 <option class="threeChildren children" value="3">Three</option>
@@ -450,5 +450,54 @@
   <script type="module" src="js/modules/form-by-steps/form.js"></script>
   <script type="module" src="js/script.js"></script>
 
+ <script>
+     function toggler() {
+            
+      let selection = document.getElementById("childGroupSelectUnder18");
+      let childValue = selection.options[selection.selectedIndex].value;
+      
+      switch(childValue) {
+
+      case '0':
+        $('.child1').hide();
+        $('.child2').hide();  
+        $('.child3').hide();
+        $('.child4').hide();  
+        break;                  
+          
+      case '1':
+          $('.child1').show();
+          $('.child2').hide();  
+          $('.child3').hide();
+          $('.child4').hide();
+      break;
+
+      case '2':
+          $('.child1').show();
+          $('.child2').show();  
+          $('.child3').hide();
+          $('.child4').hide();
+          break;  
+
+      case '3':
+          $('.child1').show();
+          $('.child2').show();  
+          $('.child3').show();
+          $('.child4').hide();
+          break;
+
+      case '4':
+          $('.child1').show();
+          $('.child2').show();  
+          $('.child3').show();
+          $('.child4').show();
+          break;
+      }
+                  
+  }; 
+ 
+
+  </script>
+ 
   </body>
 </html>
